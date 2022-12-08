@@ -1,0 +1,32 @@
+{
+  "name": "firstnodejs-webserver",
+  "version": "1.0.0",
+  "description": "first NodeJS webServer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pavel-Kn/firstNodeJS-webServer.git"
+  },
+  "keywords": [
+    "node.js",
+    "server"
+  ],
+  "author": "Pavel Knyazev <pk@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pavel-Kn/firstNodeJS-webServer/issues"
+  },
+  "homepage": "https://github.com/Pavel-Kn/firstNodeJS-webServer#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.17",
+    "nodemon": "^2.0.20"
+  }
+}
