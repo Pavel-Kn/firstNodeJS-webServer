@@ -10,11 +10,17 @@ async function addNote(title) {
         title,
         id: Date.now().toString()
     }
-
     notes.push(note)
 
     await saveNotes(notes)
     console.log(chalk.bgGreen('Note was added!'))
+}
+
+async function editNoteTitle(title){
+    const notes = await getNotes()
+    const newNotes = notes.map((note) => note.id === title.id ? title : note)
+    await saveNotes(newNotes)
+    console.log(chalk.bgGreen('Title note changed'))
 }
 
 async function getNotes() {
@@ -35,19 +41,16 @@ async function printNotes() {
     })
 }
 async function log() {
-
     console.log(chalk.bgBlue('Here is the list of notes:'))
-
 }
+
 async function removeNote(id) {
     const notes = await getNotes()
-
     const filtered = notes.filter(note => note.id !== id)
-
     await saveNotes(filtered)
     console.log(chalk.red(`Note with id="${id}" has been removed.`))
 }
 
 module.exports = {
-    addNote, getNotes, removeNote
+    addNote, getNotes, removeNote, editNoteTitle
 }
